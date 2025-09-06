@@ -55,7 +55,7 @@
     "persist": "rclone.conf",
     "checkver": {
         "github": "https://github.com/wiserain/rclone",
-        "re": "/releases/tag/(?:v|V)?([\d\-.]+)"
+        "re": "/releases/tag/(?:v|V)?([0-9.-]+)"
     },
     "autoupdate": {
         "architecture": {
