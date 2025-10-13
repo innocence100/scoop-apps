@@ -1,0 +1,79 @@
+{
+    "version": "1.71.1-266",
+    "description": "Rclone MOD that supports 115 provider",
+    "homepage": "https://github.com/wiserain/rclone",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.71.1-266/rclone-v1.71.1-266-windows-amd64.zip",
+            "hash": "befebc2c524c85c66b97d244726b70b9330898bc3c8e4575cdf7adfd080a3f50",
+            "extract_dir": "rclone-v1.71.1-266-windows-amd64"
+        },
+        "32bit": {
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.71.1-266/rclone-v1.71.1-266-windows-386.zip",
+            "hash": "dbbf1d042d23868bf77b1b80041aeb714b2a366955265135add7fbaaf71fc78d",
+            "extract_dir": "rclone-v1.71.1-266-windows-386"
+        },
+        "arm64": {
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.71.1-266/rclone-v1.71.1-266-windows-arm64.zip",
+            "hash": "6b4e13dd4bf357d13f704bc1457f6424ed33c0b277b4368cb6464fd3a9b9b25f",
+            "extract_dir": "rclone-v1.71.1-266-windows-arm64"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\rclone.conf\") -or !(Get-Item \"$persist_dir\\rclone.conf\").Length) {",
+        "   New-Item \"$persist_dir\\rclone.conf\" -ItemType File -Force | Out-Null",
+        "",
+        "   $tilde = if ($env:HOME) {",
+        "       $env:HOME",
+        "   } elseif ($env:USERPROFILE) {",
+        "       $env:USERPROFILE",
+        "   } else {",
+        "       \"$env:HOMEDRIVE%\\$env:HOMEPATH\"",
+        "   }",
+        "",
+        "   $importConf = if (Test-Path \"$env:APPDATA\\rclone\\rclone.conf\") {",
+        "       \"$env:APPDATA\\rclone\\rclone.conf\"",
+        "   } elseif (Test-Path \"$env:XDG_CONFIG_HOME\\rclone\\rclone.conf\") {",
+        "       \"$env:XDG_CONFIG_HOME\\rclone\\rclone.conf\"",
+        "   } elseif (Test-Path \"$tilde\\.config\\rclone\\rclone.conf\") {",
+        "       \"$tilde\\.config\\rclone\\rclone.conf\"",
+        "   } elseif (Test-Path \"$tilde\\.rclone.conf\") {",
+        "       \"$tilde\\.rclone.conf\"",
+        "   }",
+        "",
+        "   if ($importConf -and (Test-Path $importConf)) {",
+        "       Copy-Item $importConf \"$persist_dir\\rclone.conf\"",
+        "       Write-Host \"Imported existing rclone.conf from $importConf.\" -ForegroundColor Yellow",
+        "   }",
+        "}"
+    ],
+    "uninstaller": {
+        "script": "if ((Test-Path \"$dir\\rclone.conf\") -and !(Get-Item \"$dir\\rclone.conf\").LinkType -and (Test-Path $persist_dir)) { Copy-Item \"$dir\\rclone.conf\" $persist_dir }"
+    },
+    "bin": "rclone.exe",
+    "persist": "rclone.conf",
+    "checkver": {
+        "github": "https://github.com/wiserain/rclone",
+        "re": "/releases/tag/(?:v|V)?([0-9.-]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wiserain/rclone/releases/download/v$version/rclone-v$version-windows-amd64.zip",
+                "extract_dir": "rclone-v$version-windows-amd64"
+            },
+            "32bit": {
+                "url": "https://github.com/wiserain/rclone/releases/download/v$version/rclone-v$version-windows-386.zip",
+                "extract_dir": "rclone-v$version-windows-386"
+            },
+            "arm64": {
+                "url": "https://github.com/wiserain/rclone/releases/download/v$version/rclone-v$version-windows-arm64.zip",
+                "extract_dir": "rclone-v$version-windows-arm64"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA256SUMS"
+        }
+    }
+}
