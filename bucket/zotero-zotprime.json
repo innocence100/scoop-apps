@@ -1,12 +1,12 @@
 {
-    "version": "0.0.1",
+    "version": "0.114.514",
     "description": "Modified Zotero",
     "homepage": "https://github.com/innocence100/zotprime",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/innocence100/zotprime/releases/download/0.0.1/Zotero_win-x64.zip",
-            "hash": "bda86015ff9df241e2b584a917ce86c30abbc02a93316b121f35bead88a77cef"
+            "url": "https://github.com/innocence100/zotprime/releases/download/0.114.514/Zotero_win-x64.zip",
+            "hash": "20e170a17aff54c0e988fba420b329bde9e75887735f102905e4e769186f6e87"
         }
     },
     "extract_dir": "core",
