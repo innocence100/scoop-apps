@@ -6,7 +6,8 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/innocence100/zotprime/releases/download/0.114.514/Zotero_win-x64.zip",
-            "hash": "20e170a17aff54c0e988fba420b329bde9e75887735f102905e4e769186f6e87"
+            "hash": "20e170a17aff54c0e988fba420b329bde9e75887735f102905e4e769186f6e87",
+            "extract_dir": "Zotero_win-x64"
         }
     },
     "bin": "zotero.exe",
