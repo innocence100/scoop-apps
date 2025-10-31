@@ -5,7 +5,7 @@
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/innocence100/zotprime/releases/download/8.0.114514/Zotero_win-x64.zip",
+            "url": "https://github.com/innocence100/zotprime/releases/download/0.0.1/Zotero_win-x64.zip",
             "hash": "bda86015ff9df241e2b584a917ce86c30abbc02a93316b121f35bead88a77cef"
         }
     },
