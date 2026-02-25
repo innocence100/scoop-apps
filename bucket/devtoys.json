@@ -17,6 +17,12 @@
             "hash": "3c1a395c94979714cab9842f20d6a9ebe1273eb84a02e5fcaad5b688119be8c8"
         }
     },
+    "shortcuts": [
+        [
+            "DevToys.exe",
+            "DevToys"
+        ]
+    ],
     "checkver": {
         "url": "https://api.github.com/repos/devtoys-app/devtoys/releases",
         "regex": "releases/tag/v([\\d.]+)"
