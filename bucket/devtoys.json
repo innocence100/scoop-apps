@@ -3,6 +3,9 @@
     "homepage": "https://devtoys.app/",
     "description": "A Swiss Army knife for developers.",
     "license": "MIT",
+    "suggest": {
+        "webview2": "extras/webview2"
+    },
     "architecture": {
         "32bit": {
             "url": "https://github.com/DevToys-app/DevToys/releases/download/v2.0.9.0/devtoys_win_x86_portable.zip",
