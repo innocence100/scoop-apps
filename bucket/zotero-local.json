@@ -1,12 +1,12 @@
 {
-    "version": "8.0.4.114514",
+    "version": "9.0.3.114514",
     "description": "Modified Zotero",
     "homepage": "https://github.com/innocence100/zotero-client",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/innocence100/zotero-client/releases/download/8.0.4.114514/Zotero_win-x64.zip",
-            "hash": "7c49ed99ae0873bd4004ad2977912ab44b38d89646256d8c730f6ebe0cce941e",
+            "url": "https://github.com/innocence100/zotero-client/releases/download/9.0.3.114514/Zotero_win-x64.zip",
+            "hash": "e517bb54993edca53476a96207108c9caefa61f8e246223a687b8349feb95996",
             "extract_dir": "Zotero_win-x64"
         }
     },
